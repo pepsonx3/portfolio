@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan | Full-Stack Developer & Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --transition: all 0.3s ease;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        
+        .skill-card, .project-card, .service-card {
+            transition: var(--transition);
+            transform: translateY(0);
+        }
+        
+        .skill-card:hover, .project-card:hover, .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .theme-toggle {
+            transition: var(--transition);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #0ea5e9;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary-600 dark:text-primary-400">Alex Morgan</a>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="theme-toggle p-2 rounded-full bg-gray-100 dark:bg-gray-800">
+                        <i class="fas fa-moon text-gray-800 dark:text-yellow-400"></i>
+                    </button>
+                    
+                    <button class="md:hidden p-2 rounded-md bg-gray-100 dark:bg-gray-800">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section-padding pt-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Full-Stack Developer & <span class="text-primary-600 dark:text-primary-400">Designer</span></h1>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">I create beautiful, functional digital experiences through clean code and thoughtful design.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">View Projects</a>
+                        <a href="#contact" class="px-6 py-3 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">Hire Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center hero-image">
+                        <div class="w-56 h-56 md:w-72 md:h-72 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-6xl md:text-8xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8">
+                    <p class="text-lg mb-6">
+                        I'm Alex Morgan, a passionate full-stack developer and designer with over 5 years of experience creating digital solutions that blend functionality with aesthetics.
+                    </p>
+                    <p class="text-lg mb-6">
+                        My journey began with graphic design, which evolved into UI/UX design, and eventually led me to full-stack development. This unique combination allows me to approach projects holistically, ensuring both the front-end experience and back-end functionality work in harmony.
+                    </p>
+                    <p class="text-lg">
+                        When I'm not coding or designing, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through tech blogs and workshops.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills & Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Development Skills -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 skill-card">
+                    <h3 class="text-xl font-semibold mb-6 text-primary-600 dark:text-primary-400 flex items-center">
+                        <i class="fas fa-code mr-3"></i> Development
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fab fa-js-square text-yellow-500 mr-2"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-php text-purple-500 mr-2"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-blue-500 mr-2"></i>
+                            <span>SQL / MySQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-html5 text-orange-500 mr-2"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-css3-alt text-blue-600 mr-2"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-react text-blue-400 mr-2"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-vuejs text-green-500 mr-2"></i>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-node-js text-green-600 mr-2"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-laravel text-red-500 mr-2"></i>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-git-alt text-orange-600 mr-2"></i>
+                            <span>Git / GitHub</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Design Skills -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 skill-card">
+                    <h3 class="text-xl font-semibold mb-6 text-primary-600 dark:text-primary-400 flex items-center">
+                        <i class="fas fa-palette mr-3"></i> Design
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fab fa-figma text-purple-600 mr-2"></i>
+                            <span>UI/UX - Figma</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-paint-brush text-pink-500 mr-2"></i>
+                            <span>Adobe Photoshop</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-pen-nib text-orange-500 mr-2"></i>
+                            <span>Adobe Illustrator</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-blue-500 mr-2"></i>
+                            <span>Responsive Design</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-green-500 mr-2"></i>
+                            <span>User Research</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-object-group text-indigo-500 mr-2"></i>
+                            <span>Wireframing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A full-featured online store with product management, cart functionality, and secure payment processing.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">React</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="flex-1 text-center py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">Live Demo</a>
+                            <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                        <i class="fas fa-tasks text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A collaborative project management tool with real-time updates, team assignments, and progress tracking.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">Vue.js</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="flex-1 text-center py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">Live Demo</a>
+                            <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A comprehensive data visualization platform with interactive charts, filters, and export capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">React</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">D3.js</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">PHP</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="flex-1 text-center py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">Live Demo</a>
+                            <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center service-card">
+                    <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-code text-primary-600 dark:text-primary-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Custom web applications built with modern technologies, responsive design, and optimized performance.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center service-card">
+                    <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-pencil-alt text-primary-600 dark:text-primary-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400">User-centered design solutions that enhance usability, engagement, and overall user experience.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center service-card">
+                    <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-primary-600 dark:text-primary-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Branding & Graphic Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Visual identity creation including logos, marketing materials, and brand guidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <p class="text-lg mb-6">Interested in working together? Feel free to reach out for project inquiries or collaboration opportunities.</p>
+                    
+                    <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-envelope text-primary-600 dark:text-primary-400 mr-2"></i>
+                            <span>alex.morgan@example.com</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fab fa-github text-primary-600 dark:text-primary-400 mr-2"></i>
+                            <span>github.com/alexmorgan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-xl font-bold">Alex Morgan</p>
+                    <p class="text-gray-400">Full-Stack Developer & Designer</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-dribbble text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Alex Morgan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to light
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            // Toggle icon
+            themeIcon.classList.toggle('fa-moon');
+            themeIcon.classList.toggle('fa-sun');
+            
+            // Toggle theme
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Set initial state and add scroll listener
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
