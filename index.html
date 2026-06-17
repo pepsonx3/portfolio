@@ -104,6 +104,12 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
@@ -402,6 +408,67 @@
                         </div>
                         <div class="flex space-x-3">
                             <a href="https://soliditydesignslab.io/" class="flex-1 text-center py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">Live Demo</a>
+                            <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Habari Studios -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center">
+                        <i class="fas fa-camera-retro text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Habari Studios</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A photography studio management platform with client galleries, photo selection &amp; finalisation workflow, admin dashboard, and booking/project tracking — built end-to-end for a working studio.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">Tailwind</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <span class="flex-1 text-center py-2 bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg font-medium btn-disabled" title="Private client project">Private Project</span>
+                            <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: StreamVault -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center">
+                        <i class="fas fa-play-circle text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">StreamVault</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A media aggregation platform combining live sports scores, RSS news, live TV channels, and a podcast player — each built on a different third-party REST API, with a sandboxed video player to block ad-hijacking.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">REST APIs</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <span class="flex-1 text-center py-2 bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg font-medium btn-disabled" title="Local/dev project">Local Project</span>
+                            <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: LMS / PayChangu -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden project-card">
+                    <div class="h-48 bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center">
+                        <i class="fas fa-money-check-dollar text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Loan Management System</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A loan management system with PayChangu payment gateway integration, encrypted credential storage with runtime decryption, and refactored disbursement logic built around verified API endpoints.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-sm rounded-full">PayChangu API</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <span class="flex-1 text-center py-2 bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg font-medium btn-disabled" title="Private client project">Private Project</span>
                             <a href="#" class="flex-1 text-center py-2 bg-transparent border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors">GitHub</a>
                         </div>
                     </div>
